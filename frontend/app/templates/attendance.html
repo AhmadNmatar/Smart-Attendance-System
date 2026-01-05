@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Attendance</title>
+<style>
+  .control-panel { display:flex; gap: 10px; align-items:center; margin: 12px 0; }
+  .wrap { padding: 10px 16px; border: 0; border-radius: 8px; background:#334; color:#fff; cursor:pointer; }
+  .wrap.secondary { background:#666; }
+  .wrap:disabled { opacity: .6; cursor: not-allowed; }
+  .status { font: 14px/1.4 system-ui, sans-serif; margin-left: 8px; }
+
+  #stage { position: relative;  width: 640px; max-width: 100%; margin: 12px 0; display:none; }
+  #cam, #overlay { width: 100%; display: block; }
+  #overlay { position:absolute; left:0; top:0; }
+
+</style>
+{% endblock %}
+
+{% block body %}
+<div class="attendance ">
+  <div class="a2 table-wrap">
+        <table aria-label="Attendance table">
+      <thead>
+        <tr>
+          <th scope="col">name</th>
+          <th scope="col">date</th>
+          <th scope="col">status</th>
+        </tr>
+      </thead>
+      <tbody id="att-body">
+      </tbody>
+    </table>
+  </div>
+
+  <div id="stage" class="a3">
+      <video id="cam" autoplay muted playsinline></video>
+    <canvas id="overlay"></canvas>
+  </div>
+</div>
+
+<div class="a4 control-panel">
+      <button id="start-btn" class="wrap">Start</button>
+    <button id="stop-btn" class="wrap secondary" disabled>Stop</button>
+    <span id="status" class="status"></span>
+</div>
+
+<script src="{{ url_for('static', filename='attendance.js') }}"></script>
+{% endblock %}
