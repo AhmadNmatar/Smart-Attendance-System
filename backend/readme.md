@@ -191,55 +191,6 @@ curl -X GET "http://localhost:8000/attendance/records" \
 
 ---
 
-## 🎯 Usage Examples
-
-### 1. Enroll a New Person
-
-```python
-import requests
-
-url = "http://localhost:8000/attendance/enroll"
-headers = {"Authorization": "Bearer <your-token>"}
-data = {
-    "first_name": "John",
-    "last_name": "Doe",
-    "image_path": "/path/to/photo.jpg"
-}
-
-response = requests.post(url, json=data, headers=headers)
-print(response.json())
-```
-
-### 2. Take Attendance
-
-```python
-import requests
-
-url = "http://localhost:8000/attendance/take_attendance"
-headers = {
-    "Authorization": "Bearer <your-token>",
-    "Content-Type": "image/jpeg"
-}
-
-with open("/path/to/capture.jpg", "rb") as f:
-    response = requests.post(url, data=f.read(), headers=headers)
-
-print(response.json())
-```
-
-### 3. Get Attendance Records
-
-```python
-import requests
-
-url = "http://localhost:8000/attendance/records"
-headers = {"Authorization": "Bearer <your-token>"}
-
-response = requests.get(url, headers=headers)
-print(response.json())
-```
-
----
 
 ## 🛡️ Security Features
 
@@ -263,30 +214,4 @@ Key packages used in this project:
 - **Uvicorn** - ASGI server
 
 ---
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
----
-
-## 📝 License
-
-This project is licensed under the MIT License.
-
----
-
-## 👤 Author
-
-**Ahmad Matar**
-
-- GitHub: [@AhmadNMatar](https://github.com/AhmadNMatar)
-
----
-
-## 🙏 Acknowledgments
-
-- [InsightFace](https://github.com/deepinsight/insightface) - Face analysis library
-- [FastAPI](https://fastapi.tiangolo.com/) - Excellent Python API framework
-- [SQLModel](https://sqlmodel.tiangolo.com/) - Great ORM library
 

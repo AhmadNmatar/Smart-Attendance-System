@@ -210,17 +210,4 @@ For detailed information about each component, refer to the dedicated README fil
 
 ---
 
-## Author
-
-**Ahmad Matar**
-
-- GitHub: [@AhmadNMatar](https://github.com/AhmadNMatar)
-
----
-
-## Acknowledgments
-
-- [InsightFace](https://github.com/deepinsight/insightface) - Face analysis library
-- [FastAPI](https://fastapi.tiangolo.com/) - Excellent Python API framework
-- [Flask](https://flask.palletsprojects.com/) - Lightweight web framework
 
